@@ -1,9 +1,15 @@
 const express = require('express');
 const Datastore = require('nedb');
 const fetch = require('node-fetch');
+
+// Get API_KEY from config file
 require('dotenv').config();
+const API_KEY=process.env.API_KEY;
 
 const app = express();
+
+// Check if a PORT has already been assigned by hosting provider, otherwise
+// use default port 3000 (on localhost)
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Starting server at ${port}`);
@@ -37,9 +43,6 @@ app.get('/weather/:latlon', async (request, response) => {
   const latlon = request.params.latlon.split(',');
   const lat = latlon[0];
   const lon = latlon[1];
-
-  // const api_key='apikey=DojzYMOeKzsAbEfEZYIUzvpbgxeDDICQ';
-  const API_KEY=process.env.API_KEY;
   
   const weather_items = ['temp', 'wind_speed', 'wind_direction', 'wind_gust'];
   let weather_params='fields=';
