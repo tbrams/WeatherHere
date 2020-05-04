@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>The Weather Here</title>
+</head>
+
+<body>
+  <h1>The Weather is Here</h1>
+  <div>
+    <a href="/">check in</a> | <a href="/checkins">view checkins</a>
+  </div>
+  <p>
+    The temperature here at 
+    <span id="latitude"></span>&deg;, <span id="longitude"></span>&deg; is
+    <span id="temp_value"></span> <span id="temp_units"></span>
+    with wind at
+    <span id="wind_direction"></span> <span id="wind_direction_units"></span> / <span id="wind_speed"></span> [<span id="wind_speed_units"></span>] gusting 
+    <span id="wind_gust"></span> [<span id="wind_gust_units"></span>]
+  </p>
+
+  <p id="aq">The concentration of
+    particulate matter (<span id="aq_parameter"></span>) is
+    <span id="aq_value"></span> <span id="aq_units"></span> <br />(This information was recorded <span id="aq_date"></span>).
+  </p>
+  <script src="sketch.js"></script>
+</body>
+
+</html>
